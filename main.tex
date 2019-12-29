@@ -1,0 +1,41 @@
+% TEMPLATE OF A DOCUMENT THAT HAVE TO HAVE
+% TWO (OR MORE) LANGUAGES/TRANSLATIONS
+% Reference:
+% https://tex.stackexchange.com/a/89878/134647
+%
+% Don't to be confused with a document that have
+% to have text from many languages in the same
+% document. For such purpose, you may want to check
+% https://www.overleaf.com/learn/latex/International_language_support#Using_more_than_one_language_in_a_document
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% PREAMBLE
+
+% Commands to create/select language(s)
+\newif\ifen
+\newcommand{\en}[1]{\ifen#1\fi}
+\newif\ifes
+\newcommand{\es}[1]{\ifes#1\fi}
+\entrue % Change to \estrue for spanish
+% Here and now, you can use \en{} and/or \es{} anywhere
+
+\en{\usepackage[english]{babel}}
+\es{\usepackage[spanish,mexico]{babel}}
+
+% TITLE
+
+\title{\en{language test}\es{prueba de idiomas}}
+\author{Alex Bustos}
+\date{\en{December 2019}\es{Diciembre de 2019}}
+
+% BODY
+
+\begin{document}
+
+\maketitle
+
+\section{\en{Introduction}\es{Introducción}}
+
+\end{document}
